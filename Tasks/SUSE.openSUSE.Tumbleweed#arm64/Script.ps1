@@ -2,7 +2,10 @@ $Object1 = $Global:DumplingsStorage.WSLDistributions.distributions.Where({ $_.Pa
 
 # Installer
 $this.CurrentState.Installer += [ordered]@{
-  Query        = [ordered]@{}
+  Architecture = 'x64'
+  InstallerUrl = $Object1.Amd64PackageUrl
+}
+$this.CurrentState.Installer += [ordered]@{
   Architecture = 'arm64'
   InstallerUrl = $Object1.Arm64PackageUrl
 }
